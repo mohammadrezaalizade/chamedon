@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { MenuIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -27,11 +27,15 @@ export const navigators = [
 ];
 const Header = () => {
   const router = useRouter();
+  const [slider, setSlider] = useState<Boolean>(false);
   return (
     <>
       <header className="font-kalaam w-screen my-4 select-none fixed z-50 ">
         <div className="flex w-[90%] bg-white p-4 shadow-md  mx-auto justify-between rounded-2xl items-center">
-          <MenuIcon className="w-6 h-6  md:hidden" />
+          <MenuIcon
+            className="w-6 h-6  md:hidden hover:text-[#3e3e3e] cursor-pointer"
+            onClick={() => setSlider(true)}
+          />
           <div className="hidden md:flex font-bold  gap-4 text-[1rem] flex-row-reverse order-2">
             {navigators.map((navigator, index) => (
               <Link href={navigator.path} key={index}>
@@ -61,7 +65,10 @@ const Header = () => {
           </Link>
         </div>
       </header>
-      <Slider />
+      <Slider
+        visibility={slider}
+        setVisibility={(val: boolean) => setSlider(val)}
+      />
     </>
   );
 };
