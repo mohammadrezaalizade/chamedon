@@ -1,9 +1,9 @@
 import React from "react";
 import Header from "../components/UI/Header";
 
-interface Props {
-  children: JSX.Element;
-}
+type Props = {
+  children: React.ReactNode;
+};
 
 const PageLayout: React.FC<Props> = ({ children }): JSX.Element => {
   return (

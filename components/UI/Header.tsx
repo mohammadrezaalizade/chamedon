@@ -3,6 +3,8 @@ import { MenuIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Slider from "./Slider";
+import { motion, AnimatePresence } from "framer-motion";
+
 export const navigators = [
   {
     title: "خانه",
@@ -14,7 +16,7 @@ export const navigators = [
   },
   {
     title: "بلاگ",
-    path: "//blog",
+    path: "/blog",
   },
   {
     title: "درباره ما",
@@ -25,7 +27,7 @@ export const navigators = [
     path: "/contact-us",
   },
 ];
-const Header = () => {
+const Header:React.FC = () => {
   const router = useRouter();
   const [slider, setSlider] = useState<Boolean>(false);
   return (
@@ -65,10 +67,13 @@ const Header = () => {
           </Link>
         </div>
       </header>
+      <AnimatePresence>
+
+        </AnimatePresence>
       <Slider
         visibility={slider}
         setVisibility={(val: boolean) => setSlider(val)}
-      />
+        />
     </>
   );
 };
