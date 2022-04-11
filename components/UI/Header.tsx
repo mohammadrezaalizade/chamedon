@@ -3,7 +3,6 @@ import { MenuIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Slider from "./Slider";
-import { motion, AnimatePresence } from "framer-motion";
 
 export const navigators = [
   {
@@ -67,9 +66,6 @@ const Header:React.FC = () => {
           </Link>
         </div>
       </header>
-      <AnimatePresence>
-
-        </AnimatePresence>
       <Slider
         visibility={slider}
         setVisibility={(val: boolean) => setSlider(val)}
