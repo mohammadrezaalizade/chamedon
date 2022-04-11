@@ -4,10 +4,10 @@ import PageLayout from "../../layouts/Pagelayout";
 const Homepage = () => {
   return (
     <PageLayout>
-     {/* LANDING PAGE */}
-     <div>
-       
-     </div>
+      {/* LANDING PAGE */}
+      <div>
+        <h1>HOME PAGE</h1>
+      </div>
     </PageLayout>
   );
 };
